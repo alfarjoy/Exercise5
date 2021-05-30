@@ -1,0 +1,67 @@
+﻿@model Exercise5.Models.List
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Covid Vaccination Registration";
+}
+
+<h2>Covid Vaccination Registration</h2>
+
+<form asp-action="register" method="post">
+    <div class="form-group">
+        <label class="form-label">Last Name</label>
+        <input class="form-control" asp-for="Lname" />
+        <span class="text-danger" asp-validation-for="Lname"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">First Name</label>
+        <input class="form-control" asp-for="Fname" />
+        <span class="text-danger" asp-validation-for="Fname"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Middle Name</label>
+        <input class="form-control" asp-for="Mname" />
+        <span class="text-danger" asp-validation-for="Mname"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Address</label>
+        <input class="form-control" asp-for="Address" />
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Age</label>
+        <input class="form-control" asp-for="Age" />
+        <span class="text-danger" asp-validation-for="Age"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Gender</label>
+        <input class="form-control" asp-for="Gender" />
+        <span class="text-danger" asp-validation-for="Gender"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Birthdate</label>
+        <input class="form-control" asp-for="Bday" />
+        <span class="text-danger" asp-validation-for="Bday"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Mobile Number</label>
+        <input class="form-control" asp-for="MobileNumber" />
+        <span class="text-danger" asp-validation-for="MobileNumber"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-control" asp-for="EmailAddress" />
+        <span class="text-danger" asp-validation-for="EmailAddress"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
