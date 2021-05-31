@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Exercise5.DataContext;
-using Exercise5.Models;
+using MVC_CRUD.DataContext;
+using MVC_CRUD.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Exercise5.Controllers
+namespace MVC_CRUD.Controllers
 {
-    public class ListController : Controller
+    public class UserController : Controller
     {
-        private readonly ListDbContext _cruddbcontext;
+        private readonly CrudDbContext _cruddbcontext;
 
-        public ListController(ListDbContext crudDbContext)
+        public UserController(CrudDbContext crudDbContext)
         {
             _cruddbcontext = crudDbContext;
         }
@@ -21,11 +21,11 @@ namespace Exercise5.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult ContactTrace(List u)
+        public IActionResult ContactTrace(User u)
         {
             if (ModelState.IsValid)
             {
-                _cruddbcontext.Lists.Add(u);
+                _cruddbcontext.Users.Add(u);
                 _cruddbcontext.SaveChanges();
                 return RedirectToAction("Allusers");
             }
@@ -33,7 +33,7 @@ namespace Exercise5.Controllers
         }
         public IActionResult AllUsers()
         {
-            return View(_cruddbcontext.Lists.ToList());
+            return View(_cruddbcontext.Users.ToList());
         }
         [HttpGet]
         public IActionResult Edit(int id)
@@ -42,17 +42,17 @@ namespace Exercise5.Controllers
             {
                 return NotFound();
             }
-            var user = _cruddbcontext.Lists.FirstOrDefault(u => u.UserId == id);
+            var user = _cruddbcontext.Users.FirstOrDefault(u => u.UserId == id);
             return View(user);
         }
         [HttpPost]
-        public IActionResult Edit(List u)
+        public IActionResult Edit(User u)
         {
             if (u == null)
             {
                 return NotFound();
             }
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
                 _cruddbcontext.Update(u);
                 _cruddbcontext.SaveChanges();
@@ -63,7 +63,7 @@ namespace Exercise5.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var user = _cruddbcontext.Lists.FirstOrDefault(u => u.UserId == id);
+            var user = _cruddbcontext.Users.FirstOrDefault(u => u.UserId == id);
 
             if (user == null)
             {

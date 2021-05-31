@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace Exercise5.Models
+namespace MVC_CRUD.Models
 {
     public class ErrorViewModel
     {

@@ -5,14 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Exercise5.DataContext;
+using MVC_CRUD.DataContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Exercise5
-
+namespace MVC_CRUD
 {
     public class Startup
     {
@@ -26,7 +25,7 @@ namespace Exercise5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ListDbContext>(options => options.UseSqlServer(
+            services.AddDbContext<CrudDbContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("Default")
                 ));
             services.AddControllersWithViews();
