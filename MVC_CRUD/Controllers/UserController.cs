@@ -21,7 +21,7 @@ namespace MVC_CRUD.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult ContactTrace(User u)
+        public IActionResult Register(User u)
         {
             if (ModelState.IsValid)
             {

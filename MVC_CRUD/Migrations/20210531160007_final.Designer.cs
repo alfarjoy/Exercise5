@@ -3,14 +3,16 @@ using MVC_CRUD.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVC_CRUD.Migrations
 {
     [DbContext(typeof(CrudDbContext))]
-    partial class CrudDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210531160007_final")]
+    partial class final
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +35,7 @@ namespace MVC_CRUD.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Bdate")
+                    b.Property<string>("Date_TimeIn")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -55,10 +57,8 @@ namespace MVC_CRUD.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Placeofbirth")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<double>("Temperature")
+                        .HasColumnType("float");
 
                     b.HasKey("UserId");
 

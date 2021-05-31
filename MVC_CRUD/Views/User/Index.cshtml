@@ -4,12 +4,12 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Contact Tracing Form";
+    ViewData["Title"] = "Covid19 Vaccination Program";
 }
 
-<h2>Contact Tracing Form</h2>
+<h2>Covid19 Vaccination Program</h2>
 
-<form asp-action="contacttrace" method="post">
+<form asp-action="register" method="post">
     <div class="form-group">
         <label class="form-label">Name</label>
         <input class="form-control" asp-for="Name" />
@@ -29,21 +29,21 @@
     </div>
 
     <div class="form-group">
+        <label class="form-label">Birthdate</label>
+        <input class="form-control" asp-for="Bdate" />
+        <span class="text-danger" asp-validation-for="Bdate"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Place of Birth</label>
+        <input class="form-control" asp-for="Placeofbirth" />
+        <span class="text-danger" asp-validation-for="Placeofbirth"></span>
+    </div>
+
+    <div class="form-group">
         <label class="form-label">Gender</label>
         <input class="form-control" asp-for="Gender" />
         <span class="text-danger" asp-validation-for="Gender"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="form-label">Date/Time In</label>
-        <input class="form-control" asp-for="Date_TimeIn" />
-        <span class="text-danger" asp-validation-for="Date_TimeIn"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="form-label">Temperature</label>
-        <input class="form-control" asp-for="Temperature" />
-        <span class="text-danger" asp-validation-for="Temperature"></span>
     </div>
 
     <div class="form-group">

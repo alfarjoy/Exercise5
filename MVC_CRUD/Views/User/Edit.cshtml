@@ -3,13 +3,13 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Update User";
+    ViewData["Title"] = "Update Information";
 }
 
 <h2>Update Form</h2>
 
 <form asp-action="edit" method="post">
-    <input type="hidden" asp-for="UserId"? />
+    <input type="hidden" asp-for="UserId" ? />
     <div class="form-group">
         <label class="form-label">Name</label>
         <input class="form-control" asp-for="Name" />
@@ -29,21 +29,21 @@
     </div>
 
     <div class="form-group">
+        <label class="form-label">Birthdate</label>
+        <input class="form-control" asp-for="Bdate" />
+        <span class="text-danger" asp-validation-for="Bdate"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Place of Birth</label>
+        <input class="form-control" asp-for="Placeofbirth" />
+        <span class="text-danger" asp-validation-for="Placeofbirth"></span>
+    </div>
+
+    <div class="form-group">
         <label class="form-label">Gender</label>
         <input class="form-control" asp-for="Gender" />
         <span class="text-danger" asp-validation-for="Gender"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="form-label">Date/Time In</label>
-        <input class="form-control" asp-for="Date_TimeIn" />
-        <span class="text-danger" asp-validation-for="Date_TimeIn"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="form-label">Temperature</label>
-        <input class="form-control" asp-for="Temperature" />
-        <span class="text-danger" asp-validation-for="Temperature"></span>
     </div>
 
     <div class="form-group">
